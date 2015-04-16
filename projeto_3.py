@@ -9,7 +9,6 @@ informacoes = entrada_informacoes.split(',')
 
 
 
-
 nome = informacoes[0]
 sexo = informacoes[3]
 idade = int(informacoes[1])
@@ -42,8 +41,12 @@ arquivo_txt = open("newfile.txt","w")
 arquivo_txt.write("O seu Indice de massa corporea é %s \n"%IMC)
 arquivo_txt.write("voce esta %s \n"%imc_usuario)
 
-
-
+diario = {}
+entrada_usuario.readline()
+linhasdiario = entrada_usuario.readlines() 
+for line in linhasdiario:
+    print(line)
+    
 
 """
 formula consumo de caloria ideal
