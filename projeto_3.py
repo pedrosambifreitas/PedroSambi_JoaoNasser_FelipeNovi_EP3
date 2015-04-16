@@ -27,15 +27,15 @@ if IMC < 17:
 elif IMC > 17 and IMC < 18.49:
 	imc_usuario = "abaixo do peso"
 elif IMC >=18.5 and IMC < 24.99:
-	imc_usuario = "Peso Normal"
+	imc_usuario = "no peso normal"
 elif IMC >25 and IMC <29.99:
 	imc_usuario = "acima do peso"
 elif IMC >30 and IMC< 34.99:
-	imc_usuario = "nivel de obesidade 1"
+	imc_usuario = "no nivel de obesidade 1"
 elif IMC >35 and IMC <39.99:
-	imc_usuario = "nivel de obesidade 2"
+	imc_usuario = "no nivel de obesidade 2"
 elif IMC>40:
-	imc_usuario = "obesidade morbida"
+	imc_usuario = "com obesidade morbida"
 
 print(imc_usuario)
 arquivo_txt = open("newfile.txt","w")
