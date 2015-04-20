@@ -5,17 +5,15 @@ entrada_usuario = open("usuario.csv","r")
 entrada_usuario.readline()
 entrada_informacoes = entrada_usuario.readline()
 entrada_informacoes.strip()
-informacoes = entrada_informacoes.split(',')
+info = entrada_informacoes.split(',')
 
 
-
-nome = informacoes[0]
-sexo = informacoes[3]
-idade = int(informacoes[1])
-altura = float(informacoes[4])
-peso = float(informacoes[2])
-atividade = informacoes[5]
-
+nome = info[0]
+sexo = info[3]
+idade = int(info[1])
+altura = float(info[4])
+peso = float(info[2])
+atividade = info[5]
 
 
 IMC = peso/(altura**2)
@@ -35,11 +33,13 @@ elif IMC >35 and IMC <39.99:
 	imc_usuario = "no nivel de obesidade 2"
 elif IMC>40:
 	imc_usuario = "com obesidade morbida"
-
 print(imc_usuario)
+
+
 arquivo_txt = open("newfile.txt","w")
 arquivo_txt.write("O seu Indice de massa corporea é %s \n"%IMC)
 arquivo_txt.write("voce esta %s \n"%imc_usuario)
+
 
 diario = {}
 entrada_usuario.readline()
@@ -57,5 +57,29 @@ elif sexo == "f" or sexo == "F":
 	HBm = (447.593 + (9.247 * peso) + (3.098 * altura) - (4.330 * idade)) * atividade	
 """	
 
+entrada_alimentos = open("alimentos.csv","r")
+linhas = entrada_alimentos.readlines()
+linhas_limpas = []                            
+for i in linhas:
+    linhas_limpas.append(i.strip())
+alimentos = dict()
+for l in linhas_limpas[1:]:                        
+    info2 = l.split(',')
+     
+info2[0] = "Alimento"
+info2[1] = "Quantidade (g)"
+info2[2] = "Calorias (kcal)"
+info2[3] = "Proteínas (g)"
+info2[4] = "Carboidratos (g)"
+info2[5] = "Gorduras (g)"  
+  
+alimentos[info2[0]] = list()
+alimentos[info2[0]].append(float(info2[1]))
+alimentos[info2[0]].append(float(info2[2])/float(info2[1]))
+alimentos[info2[0]].append((float(info2[3])/float(info2[1])))
+alimentos[info2[0]].append((float(info2[4])/float(info2[1])))
+alimentos[info2[0]].append((float(info2[5])/float(info2[1])))
+
+datas = []
 
 
