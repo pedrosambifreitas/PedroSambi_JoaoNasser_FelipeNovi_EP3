@@ -65,14 +65,14 @@ for i in linhas:
 alimentos = dict()
 for l in linhas_limpas[1:]:                        
     info2 = l.split(',')
-     
+"""     
 info2[0] = "Alimento"
 info2[1] = "Quantidade (g)"
 info2[2] = "Calorias (kcal)"
 info2[3] = "Proteínas (g)"
 info2[4] = "Carboidratos (g)"
 info2[5] = "Gorduras (g)"  
-  
+"""
 alimentos[info2[0]] = list()
 alimentos[info2[0]].append(float(info2[1]))
 alimentos[info2[0]].append(float(info2[2])/float(info2[1]))
